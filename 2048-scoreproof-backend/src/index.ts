@@ -14,6 +14,7 @@ interface ScoreCount {
 
 // 2) Define your initial scores
 const initialScores: ScoreCount[] = [
+  { score: 131072 * 2, count: 0 },
   { score: 131072, count: 0 },
   { score: 65536, count: 0 },
   { score: 32768, count: 0 },
