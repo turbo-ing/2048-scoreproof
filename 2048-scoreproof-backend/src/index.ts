@@ -133,7 +133,7 @@ app.post('/scores/proof', upload.single('proof'), async (req, res) => {
   try {
     // 1) Make sure a file is provided
     if (!req.file) {
-      res.status(400).json({ error: 'No proof file uploaded' });
+      res.status(400).json({ message: 'No proof file uploaded' });
       return
     }
 
@@ -145,14 +145,14 @@ app.post('/scores/proof', upload.single('proof'), async (req, res) => {
     // Example: "abc123:2048"
     // const parts = content.split(':');
     // if (parts.length !== 2) {
-    //   res.status(400).json({ error: 'Invalid proof file format' });
+    //   res.status(400).json({ message: 'Invalid proof file format' });
     //   return
     // }
 
     const [proofId, parsedScore] = await verify2048Proof(proof);
 
     if (!proofId || parsedScore == -1 || isNaN(parsedScore)) {
-      res.status(400).json({ error: 'Invalid proof data' });
+      res.status(400).json({ message: 'Invalid proof data' });
       return
     }
 
@@ -162,7 +162,7 @@ app.post('/scores/proof', upload.single('proof'), async (req, res) => {
       .get(proofId);
 
     if (existingProof) {
-      res.status(400).json({ error: 'Proof already submitted' });
+      res.status(400).json({ message: 'Proof already submitted' });
       return
     }
 
@@ -197,7 +197,7 @@ app.post('/scores/proof', upload.single('proof'), async (req, res) => {
     res.status(201).json({ message: 'Proof verified and score updated', score: parsedScore });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: 'Failed to process proof' });
+    res.status(500).json({ message: 'Failed to process proof' });
   }
 });
 
