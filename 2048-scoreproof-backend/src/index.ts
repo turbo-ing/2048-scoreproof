@@ -35,7 +35,7 @@ const initialScores: ScoreCount[] = [
 
 // 3) Open/Create the SQLite database
 //    The `verbose` option logs SQL statements — optional for debugging
-const db = new Database('scores.db', { verbose: console.log });
+const db = new Database('scores.db');
 
 // 4) Initialize the database
 function initDb() {
