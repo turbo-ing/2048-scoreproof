@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2020",                        // Set the JavaScript version emitted
+    "module": "CommonJS",                      // Use CommonJS for Node.js
+    "lib": ["ES2020"],                         // Include necessary libraries
+    "outDir": "./dist",                        // Output directory for compiled files
+    "rootDir": "./src",                        // Root directory of input files
+    "strict": true,                            // Enable all strict type-checking options
+    "esModuleInterop": true,                   // Allow default imports from CommonJS modules
+    "resolveJsonModule": true,                 // Allow importing JSON files
+    "skipLibCheck": true,                      // Skip type checking for declaration files
+    "forceConsistentCasingInFileNames": true,  // Ensure file name casing consistency
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",               // Node.js-style module resolution
+    "allowSyntheticDefaultImports": true,     // Allow default imports even if not specified
+    "baseUrl": ".",                           // Base directory for module resolution
+    "paths": {                                // Define custom module paths
+      "@/*": ["src/*"]
+    },
+
+    /* Source Map Options */
+    "sourceMap": true,                        // Enable source maps for debugging
+    "inlineSources": true,                    // Include source code in source maps
+
+    /* Experimental Options */
+    "experimentalDecorators": true,           // Enable experimental support for decorators
+    "emitDecoratorMetadata": true             // Emit metadata for decorators
+  },
+  "include": ["src"],                         // Include source files for compilation
+  "exclude": ["node_modules", "dist"]         // Exclude unnecessary files and directories
+}
